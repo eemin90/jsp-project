@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+
+  <session-config>
+  	<session-timeout>30</session-timeout>
+  </session-config>
+  
+  <filter>
+  	<filter-name>charSetFilter</filter-name>
+  	<filter-class>project.filter.RequestCharSetFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>charSetFilter</filter-name>
+  	<url-pattern>/project/*</url-pattern>
+  </filter-mapping>
+  
+   <filter>
+  	<filter-name>loginFilter</filter-name>
+  	<filter-class>project.filter.LoginFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>loginFilter</filter-name>
+  	<url-pattern>/project/board/write</url-pattern>
+  	<url-pattern>/project/member/info</url-pattern>
+  	<url-pattern>/project/member/list</url-pattern>
+  </filter-mapping>
+	
+</web-app>
